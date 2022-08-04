@@ -9,7 +9,7 @@ namespace RegexAssignment
 {
     public class Patterns
     {
-        public static string password = "(?=.*[A-Z])[a-zA-Z]{8}";
+        public static string password = "(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8}";
         public void Validation(string sample)
         {
             if (Regex.IsMatch(sample, password))

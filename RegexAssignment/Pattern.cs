@@ -9,13 +9,13 @@ namespace RegexAssignment
 {
     public class Patterns
     {
-        public static string lastname = "^[A-Z][a-z]{2,}";
+        public static string email = "^[a-zA-Z0-9]+([!@#$%^&*()_+.,][a-zA-Z0-9]+)*[@][a-zA-Z]{2,}[.][a-zA-Z]{2,3}([.][a-zA-Z]{2})?$";
         public void Validation(string sample)
         {
-            if (Regex.IsMatch(sample, lastname))
-                Console.WriteLine("Valid lastname");
+            if (Regex.IsMatch(sample, email))
+                Console.WriteLine("Valid email");
             else
-                Console.WriteLine("Invalid lastname");
+                Console.WriteLine("Invalid email");
         }
     }
 }

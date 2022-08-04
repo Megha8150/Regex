@@ -9,13 +9,13 @@ namespace RegexAssignment
 {
     public class Patterns
     {
-        public static string phonenumber = "^91([ ])?[6-9]{1}[0-9]{9}$";
+        public static string password1 = "^[a-z]{8}$";
         public void Validation(string sample)
         {
-            if (Regex.IsMatch(sample, phonenumber))
-                Console.WriteLine("Valid phonenumber");
+            if (Regex.IsMatch(sample, password1))
+                Console.WriteLine("Valid password");
             else
-                Console.WriteLine("Invalid phonenumber");
+                Console.WriteLine("Invalid password");
         }
     }
 }

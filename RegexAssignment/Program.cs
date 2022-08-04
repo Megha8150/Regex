@@ -2,6 +2,6 @@
 Console.WriteLine("Welcome to User Registratuiuon Program");
 
 Patterns patterns = new Patterns();
-Console.WriteLine("Enter the email address");
-string email = Console.ReadLine();
-patterns.Validation(email);
+Console.WriteLine("Enter the phonenumber");
+string phonenumber = Console.ReadLine();
+patterns.Validation(phonenumber);

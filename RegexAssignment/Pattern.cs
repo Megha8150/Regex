@@ -9,10 +9,10 @@ namespace RegexAssignment
 {
     public class Patterns
     {
-        public static string password1 = "^[a-z]{8}$";
+        public static string password = "(?=.*[A-Z])[a-zA-Z]{8}";
         public void Validation(string sample)
         {
-            if (Regex.IsMatch(sample, password1))
+            if (Regex.IsMatch(sample, password))
                 Console.WriteLine("Valid password");
             else
                 Console.WriteLine("Invalid password");

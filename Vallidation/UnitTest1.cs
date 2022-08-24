@@ -6,18 +6,80 @@ namespace Vallidation;
 
 public class UnitTest1
 {
-    [TestMethod]
-    public void IfUserEntryHasAllTrue_shouldReturnUserHappy()
-    {
-        Patterns patterns = new Patterns();
-        Assert.AreEqual("happy", patterns.User("Meghana", "Nayak", "meghanag@gmail.com", "91 8050604050", "Megh#@12"));
 
-    }
     [TestMethod]
-    public void IfUserEntryHasNotAllTrue_shouldReturnUserSad()
+    public void GivenInvalidFirstName_WhenAnalyze_ShouldReturnException()
     {
-        Patterns patterns = new Patterns();
-        Assert.AreEqual("sad", patterns.User("Megh", "Sharma", "Megh@gmail.com", "918197112331", "Ddh@12"));
-
+        string expected = "First Name is not valid";
+        try
+        {
+            Patterns patterns = new Patterns();
+            string actual = patterns.User("meghana", "Nayak", "meghanag@gmail.com", "919000000000", "Dd@#nyhnesh@12");
+        }
+        catch (Custom ex)
+        {
+            Assert.AreEqual(expected, ex.Message);
+        }
     }
+
+    [TestMethod]
+    public void GivenInvalidLastName_WhenAnalyze_ShouldReturnException()
+    {
+        string expected = "Last Name is not valid";
+        try
+        {
+            Patterns patterns = new Patterns();
+            string actual = patterns.User("Meghana", "nayak", "meghanag@gmail.com", "919000000000", "Dd@#nyhnesh@12");
+        }
+        catch (Custom ex)
+        {
+            Assert.AreEqual(expected, ex.Message);
+        }
+    }
+
+    [TestMethod]
+    public void GivenInvalidEmail_WhenAnalyze_ShouldReturnException()
+    {
+        string expected = "Email is not valid";
+        try
+        {
+            Patterns patterns = new Patterns();
+            string actual = patterns.User("Meghana", "Nayak", "gmail.com", "919000000000", "Dd@#nyhnesh@12");
+        }
+        catch (Custom ex)
+        {
+            Assert.AreEqual(expected, ex.Message);
+        }
+    }
+
+    [TestMethod]
+    public void GivenInvalidMobileNumber_WhenAnalyze_ShouldReturnException()
+    {
+        string expected = "Mobile number is not valid";
+        try
+        {
+            Patterns patterns = new Patterns();
+            string actual = patterns.User("Meghana", "Nayak", "meghanag@gmail.com", "9190", "Dd@#nyhnesh@12");
+        }
+        catch (Custom ex)
+        {
+            Assert.AreEqual(expected, ex.Message);
+        }
+    }
+
+    [TestMethod]
+    public void GivenInvalidPassword_WhenAnalyze_ShouldReturnException()
+    {
+        string expected = "Password is not valid";
+        try
+        {
+            Patterns patterns = new Patterns();
+            string actual = patterns.User("Meghana", "Nayak", "meghanag@gmail.com", "919000000000", "Dd@#nyhnesh");
+        }
+        catch (Custom ex)
+        {
+            Assert.AreEqual(expected, ex.Message);
+        }
+    }
+
 }

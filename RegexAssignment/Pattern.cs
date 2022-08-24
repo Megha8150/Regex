@@ -43,6 +43,19 @@ namespace RegexAssignment
             }
             return "happy";
         }
+        public bool MultipleEmail(string[] list)
+        {
+            foreach (string email in list)
+            {
+                if (Regex.IsMatch(email, EMAIL) != true)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
+
+
 }
 
